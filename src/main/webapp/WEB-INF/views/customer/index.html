@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blank</title>
+</head>
+<body>
+<h1>Hello</h1>
+<a th:text="#{index.lang}"></a> <a href="?lang=en">English</a> | <a href="?lang=vn">Vietnamese</a>
+
+<p><button><a th:href="@{/listCustomer}" th:text="#{index.list}"></a></button>
+<p><button><a th:href="@{/createCustomer}" th:text="#{index.creat}"></a></button>
+</body>
+</html>

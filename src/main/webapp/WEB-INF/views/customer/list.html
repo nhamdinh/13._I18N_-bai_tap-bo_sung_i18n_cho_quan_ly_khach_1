@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <button><a th:href="@{/createCustomer}" th:text="#{index.creat}"></a></button>
+</p>
+
+<table border="1">
+    <tr>
+        <th th:text="#{list.fullname}"></th>
+        <th th:text="#{list.phoneNumber}"></th>
+        <th th:text="#{list.edit}"></th>
+        <th th:text="#{list.delete}"></th>
+
+    </tr>
+    <th:block th:each="customer : ${customers}">
+        <tr>
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.phoneNumber}"></td>
+            <td><a th:href="@{/editCustomer/__${customer.id}__ }" th:text="#{list.edit}"></a></td>
+            <td><a th:href="@{/deleteCustomer/__${customer.id}__ }" th:text="#{list.delete}"
+                   onclick="return confirm('Are You Sure?')"></a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
